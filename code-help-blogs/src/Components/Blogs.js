@@ -7,7 +7,7 @@ const Blogs = () => {
   const {posts, loading} = useContext(AppContext);
   console.log(posts);
   return (
-    <div className='w-11/12 max-w-[670px] py-8 flex flex-col gap-y-7'>
+    <div className='w-11/12 max-w-[670px] py-8 flex flex-col gap-y-7 mt-[64px] mb-[70px]'>
       {
         loading ? (<Spinner/>) : (
           posts.length === 0 ? 
@@ -29,7 +29,7 @@ const Blogs = () => {
                 <p className='text-md mt-[14px]'>{post.content}</p>
                 <div className='gap-x-3 flex'>
                   {post.tags.map( (tag, index) => {
-                    return <span key={tag.index} className='text-blue-500 underline font-bold text-[8px]'>{` #${tag}`}</span>
+                    return <span key={tag.index} className='text-blue-700 underline font-bold text-[8px] mt-[5px]'>{` #${tag}`}</span>
                   } )}
                 </div>
               </div>
