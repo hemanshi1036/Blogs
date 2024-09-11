@@ -20,13 +20,14 @@
 import React, { useContext, useEffect } from 'react'
 import Header from './Components/Header';
 import Blogs from './Components/Blogs'
-import Pagination from './Components/pageination';
+import Pagination from './Components/Pageination';
 import { AppContext } from './Context/AppContext';
 
 
 export const App = () => {
   const {fetchBlogPosts} = useContext(AppContext);
 
+  //first render par function aapi didhu
   useEffect(() => {
     fetchBlogPosts();
   }, [])
@@ -34,13 +35,11 @@ export const App = () => {
   
   
   return (
-    <div className="w-full h-full flex flex-col items-center justify-center gap-x-1">
+    <div className='flex flex-col gap-y-1 w-full justify-center h-full items-center'>
       <Header />
       <Blogs />
       <Pagination />
-      <div>
-        hello world
-      </div>
+      
     </div>
   )
 }
