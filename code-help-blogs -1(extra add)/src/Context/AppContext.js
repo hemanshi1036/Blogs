@@ -70,9 +70,16 @@ function AppContextProvider({ children }) {
     const [totalPages, setTotalPages] = useState(null);
 
     // Data Filling
-    async function fetchBlogPosts(page = 1) {
+    async function fetchBlogPosts(page = 1, tag=null, category) {
         setLoading(true)
-        let url = `${baseUrl}?page=${page}`;
+        // let url = `${baseUrl}?page=${page}`;
+        let url = `${baseUrl}get-blogs?page=${page}`
+        if(tag){
+            url += `&tag=${tag}`;
+        }
+        if(category){
+            url += `&category=${category}`;
+        }
         // console.log(url)
         try {
             const result = await fetch(url);
